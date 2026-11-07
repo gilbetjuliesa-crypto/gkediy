@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undangan Natal GKE DIY Reconnect</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Undangan Natal GKE Daerah Istimewa Yogyakarta</title>
+    
+    <!-- META TAGS UNTUK PREVIEW WHATSAPP -->
+    <meta property="og:title" content="Undangan Natal GKE DIY Reconnect">
+    <meta property="og:description" content="Syalom! Kami mengundang Bapak/Ibu/Saudara/i untuk merayakan Natal bersama dalam kehangatan kekeluargaan di tanah rantau.">
+    <meta property="og:image" content="https://usernameanda.github.io/undangan-natal-gke/assets/preview-wa.jpg">
+    <meta property="og:url" content="https://usernameanda.github.io/undangan-natal-gke/">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Hubungkan ke file CSS terpisah -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Canvas untuk animasi salju & kelap-kelip bintang secara real-time -->
+    <!-- Canvas Animasi Salju -->
     <canvas id="snow-canvas"></canvas>
 
-    <div class="vintage-border"></div> <!-- Bingkai dekoratif vintage di sekeliling layar -->
+    <!-- Bingkai Vintage -->
+    <div class="vintage-border"></div>
 
     <header class="hero-section">
-        <!-- Ilustrasi Utama (Visual Gereja, Pohon Natal & Bintang Natal Terang) -->
+        <!-- Ilustrasi Utama -->
         <div class="hero-graphic">
-            <div class="star-glow"></div> <!-- Animasi Bintang Natal bersinar -->
+            <div class="star-glow"></div>
+            <!-- Ganti src dengan gambar gereja/ornamen vintage pilihan Anda -->
             <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600" alt="Suasana Natal Vintage" class="hero-img">
         </div>
         
@@ -28,7 +41,8 @@
     </header>
 
     <main class="container">
-        <section class="greeting animated-fade">
+        <!-- Area Nama Tamu -->
+        <section class="greeting">
             <p class="shanti">Syalom,</p>
             <div class="name-card">
                 <h2 id="guest-name">Tamu Undangan</h2>
@@ -36,29 +50,32 @@
             <p class="invitation-text">Kami dengan penuh sukacita mengundang Bapak/Ibu/Saudara/i untuk hadir dan merayakan Natal bersama dalam kehangatan kekeluargaan di tanah rantau.</p>
         </section>
 
-        <!-- Bagian Lainnya Tetap Sama Seperti Sebelumnya -->
+        <!-- Informasi Acara -->
         <section class="event-details">
             <h3>Informasi Acara</h3>
             <div class="details-grid">
                 <div class="detail-card">
-                    <div class="icon">📅</div>
+                    <div style="font-size: 2rem; margin-bottom: 10px;">📅</div>
                     <strong>WAKTU</strong>
                     <p>Sabtu, 19 Desember 2026</p>
-                    <p class="time">17:00 WIB - Selesai</p>
+                    <p style="color: var(--accent-gold);">17:00 WIB - Selesai</p>
                 </div>
                 <div class="detail-card">
-                    <div class="icon">📍</div>
+                    <div style="font-size: 2rem; margin-bottom: 10px;">📍</div>
                     <strong>LOKASI</strong>
                     <p>Gedung Pertemuan Graha XYZ</p>
-                    <p class="address">Jl. Contoh Lokasi No. 123, Yogyakarta</p>
+                    <p>Jl. Contoh Lokasi No. 123, Yogyakarta</p>
+                    <!-- Masukkan Link Google Maps Gedung Asli -->
                     <a href="https://maps.google.com" target="_blank" class="btn-maps">Buka di Google Maps</a>
                 </div>
             </div>
         </section>
 
+        <!-- Galeri Foto GKE -->
         <section class="gallery">
             <h3>Perjalanan & Kebersamaan</h3>
             <div class="gallery-grid">
+                <!-- Ganti URL gambar di bawah dengan foto-foto GKE DIY yang sudah diunggah -->
                 <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=400" alt="Kebersamaan 1">
                 <img src="https://images.unsplash.com/photo-1543589077-47d816067f3f?auto=format&fit=crop&q=80&w=400" alt="Kebersamaan 2">
                 <img src="https://images.unsplash.com/photo-1482862549707-f63cb32c5fd9?auto=format&fit=crop&q=80&w=400" alt="Ibadah 3">
@@ -66,6 +83,7 @@
             </div>
         </section>
 
+        <!-- Formulir RSVP -->
         <section class="rsvp">
             <h3>Konfirmasi Kehadiran</h3>
             <form id="rsvp-form">
@@ -87,6 +105,7 @@
         </section>
     </main>
 
+    <!-- Hubungkan ke file JavaScript terpisah -->
     <script src="script.js"></script>
 </body>
 </html>
