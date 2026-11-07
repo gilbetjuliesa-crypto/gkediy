@@ -1,0 +1,293 @@
+:root {
+    --bg-dark: #121212;
+    --text-light: #F8F1E5; /* Vintage Beige */
+    --accent-gold: #d4af37; /* Emas */
+    --accent-gold-glow: rgba(212, 175, 55, 0.4);
+    --card-bg: rgba(30, 25, 20, 0.75); /* Dark brown hangat */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* =========================================
+   1. RESET & BACKGROUND UTAMA
+========================================= */
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Canvas Animasi Salju */
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Bingkai Vintage Pinggir Layar */
+.vintage-border {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.vintage-border::before {
+    content: '';
+    position: absolute;
+    top: 6px; left: 6px; right: 6px; bottom: 6px;
+    border: 1px dashed rgba(212, 175, 55, 0.15);
+}
+
+/* =========================================
+   2. LAYOUT UTAMA (AGAR RAPI DI LAPTOP)
+========================================= */
+.container {
+    max-width: 800px; /* Membatasi lebar konten di laptop */
+    margin: 0 auto; /* Posisi ke tengah layar */
+    padding: 20px 30px 80px 30px;
+    position: relative;
+    z-index: 3; /* Agar bisa di-klik di atas canvas salju */
+}
+
+/* =========================================
+   3. HERO SECTION & TYPOGRAPHY
+========================================= */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px 40px;
+    background: radial-gradient(circle at top, rgba(212, 175, 55, 0.15) 0%, rgba(18,18,18,1) 70%);
+    z-index: 3;
+}
+
+.hero-graphic {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.hero-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 0 25px var(--accent-gold-glow);
+    filter: sepia(0.2) contrast(1.1);
+}
+
+/* Animasi Bintang */
+.star-glow {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    background: radial-gradient(circle, #fff 10%, var(--accent-gold) 60%, transparent 100%);
+    border-radius: 50%;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(0.9); opacity: 0.7; box-shadow: 0 0 10px var(--accent-gold); }
+    50% { transform: translateX(-50%) scale(1.3); opacity: 1; box-shadow: 0 0 25px var(--accent-gold); }
+}
+
+.theme {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.subtheme {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin: 10px 0;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.description {
+    font-style: italic;
+    font-family: var(--font-heading);
+    color: #c9bda8;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+h3 {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-size: 1.8rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   4. KARTU TAMU & SECTIONS
+========================================= */
+.greeting {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.name-card {
+    display: inline-block;
+    border: 1px solid var(--accent-gold);
+    background: rgba(212,175,55,0.05);
+    padding: 15px 50px;
+    border-radius: 4px;
+    margin: 15px 0;
+    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+#guest-name {
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* GRID KARTU (Responsif HP ke Laptop) */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .details-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.detail-card {
+    background: var(--card-bg);
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+}
+
+.btn-maps {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 24px;
+    background-color: var(--accent-gold);
+    color: #121212;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.btn-maps:hover { opacity: 0.8; }
+
+/* GALERI */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    border-radius: 6px;
+    object-fit: cover;
+    filter: sepia(0.4) contrast(1.1) brightness(0.9);
+    border: 1px solid rgba(212,175,55,0.1);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    filter: none;
+    border-color: var(--accent-gold);
+}
+
+/* =========================================
+   5. FORM RSVP (YANG SEBELUMNYA HILANG)
+========================================= */
+.rsvp form {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.rsvp label {
+    font-weight: 600;
+    color: var(--accent-gold);
+    margin-bottom: -5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+button {
+    background-color: var(--accent-gold);
+    color: #121212;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.status-msg {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 10px;
+    font-weight: bold;
+}

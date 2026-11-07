@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Natal GKE DIY Reconnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas untuk animasi salju & kelap-kelip bintang secara real-time -->
+    <canvas id="snow-canvas"></canvas>
+
+    <div class="vintage-border"></div> <!-- Bingkai dekoratif vintage di sekeliling layar -->
+
+    <header class="hero-section">
+        <!-- Ilustrasi Utama (Visual Gereja, Pohon Natal & Bintang Natal Terang) -->
+        <div class="hero-graphic">
+            <div class="star-glow"></div> <!-- Animasi Bintang Natal bersinar -->
+            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600" alt="Suasana Natal Vintage" class="hero-img">
+        </div>
+        
+        <p class="theme">Terang di Tengah Kegelapan</p>
+        <h1 class="subtheme">GKE DIY RECONNECT</h1>
+        <p class="description">Memancarkan Terang Kristus Dalam Kasih Persaudaraan dan Kekeluargaan di Tanah Rantau</p>
+        
+        <div class="divider">✦ 🎄 ✦</div>
+    </header>
+
+    <main class="container">
+        <section class="greeting animated-fade">
+            <p class="shanti">Syalom,</p>
+            <div class="name-card">
+                <h2 id="guest-name">Tamu Undangan</h2>
+            </div>
+            <p class="invitation-text">Kami dengan penuh sukacita mengundang Bapak/Ibu/Saudara/i untuk hadir dan merayakan Natal bersama dalam kehangatan kekeluargaan di tanah rantau.</p>
+        </section>
+
+        <!-- Bagian Lainnya Tetap Sama Seperti Sebelumnya -->
+        <section class="event-details">
+            <h3>Informasi Acara</h3>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="icon">📅</div>
+                    <strong>WAKTU</strong>
+                    <p>Sabtu, 19 Desember 2026</p>
+                    <p class="time">17:00 WIB - Selesai</p>
+                </div>
+                <div class="detail-card">
+                    <div class="icon">📍</div>
+                    <strong>LOKASI</strong>
+                    <p>Gedung Pertemuan Graha XYZ</p>
+                    <p class="address">Jl. Contoh Lokasi No. 123, Yogyakarta</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn-maps">Buka di Google Maps</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <h3>Perjalanan & Kebersamaan</h3>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=400" alt="Kebersamaan 1">
+                <img src="https://images.unsplash.com/photo-1543589077-47d816067f3f?auto=format&fit=crop&q=80&w=400" alt="Kebersamaan 2">
+                <img src="https://images.unsplash.com/photo-1482862549707-f63cb32c5fd9?auto=format&fit=crop&q=80&w=400" alt="Ibadah 3">
+                <img src="https://images.unsplash.com/photo-1575549594211-8f370f6e431a?auto=format&fit=crop&q=80&w=400" alt="Keluarga GKE DIY">
+            </div>
+        </section>
+
+        <section class="rsvp">
+            <h3>Konfirmasi Kehadiran</h3>
+            <form id="rsvp-form">
+                <input type="hidden" id="nama-hidden" name="nama">
+                
+                <label for="kehadiran">Apakah Anda akan hadir?</label>
+                <select id="kehadiran" name="kehadiran" required>
+                    <option value="" disabled selected>Pilih Kehadiran</option>
+                    <option value="Hadir">Ya, Saya Hadir</option>
+                    <option value="Tidak Hadir">Maaf, Saya Tidak Bisa Hadir</option>
+                </select>
+
+                <label for="jumlah">Jumlah orang yang hadir:</label>
+                <input type="number" id="jumlah" name="jumlah" min="0" max="10" placeholder="Contoh: 2" required>
+
+                <button type="submit" id="submit-btn">Kirim Konfirmasi</button>
+                <p id="form-status" class="status-msg"></p>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
